@@ -11,8 +11,10 @@ SOURCE_DIR          := source
 INCLUDE_DIR         := include
 OBJECT_DIR          := object
 BUILD_DIR           := build
-C_FILES             := $(wildcard $(SOURCE_DIR)/*.c)
-CPP_FILES           := $(wildcard $(SOURCE_DIR)/*.cpp)
+C_FILES             := $(wildcard $(SOURCE_DIR)/*.c) \
+                       $(wildcard $(SOURCE_DIR)/*/*.c)
+CPP_FILES           := $(wildcard $(SOURCE_DIR)/*.cpp) \
+                       $(wildcard $(SOURCE_DIR)/*/*.cpp) 
 H_FILES             := $(wildcard $(INCLUDE_DIR)/*.h)
 HPP_FILES           := $(wildcard $(INCLUDE_DIR)/*.hpp)
 O_FILES             := $(C_FILES:$(SOURCE_DIR)/%.c=$(OBJECT_DIR)/%.o) \
