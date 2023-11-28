@@ -5,6 +5,9 @@
 typedef struct
 {
   camera *cam;
-} data_model;
+} data_model_t;
 
-data_model *data_model_init();
+namespace data_model
+{
+  data_model_t *init();
+} 

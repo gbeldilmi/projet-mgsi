@@ -3,4 +3,4 @@
 typedef struct
 {
   float x, y, z;
-} vec3;
+} vec3_t;

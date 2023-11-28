@@ -2,19 +2,27 @@
 
 #include <GL/glut.h>
 
-#include <vec2.hpp>
-#include <data_model.hpp>
+#include <mgsi.hpp>
 
-class win_view
+typedef struct
 {
-private:
-  vec2 m_window_size, m_mouse;
-  data_model *m_dm;
-public:
-  win_view(data_model *dm);
-  ~win_view();
+  int x, y;
+} vec2_t;
+
+typedef struct mouse
+{
+  vec2_t pos;
+  int button_pressed;
+} mouse_t;
+
+namespace win_view
+{
+  extern mouse_t *m_mouse;
+  void init(int argc, char **argv);
+  void display();
   void keyboard(unsigned char key, int x, int y);
   void motion(int x, int y);
   void mouse(int button, int state, int x, int y);
   void reshape(int width, int height);
+  void run();
 };

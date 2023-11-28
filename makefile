@@ -25,7 +25,7 @@ O_FILES             := $(C_FILES:$(SOURCE_DIR)/%.c=$(OBJECT_DIR)/%.o) \
 #------------------------------------------------------------------------------#
 INCLUDES_FLAGS      := -I $(INCLUDE_DIR)/
 LIBRARIES_FLAGS     := -lGL -lGLEW -lGLU -lglut  -lm
-C_FLAGS             := -Wall -Werror -Wextra -O3
+C_FLAGS             := -Wall -Werror -Wextra -O3 -fpic
 CXX_FLAGS           := $(C_FLAGS)
 LD_FLAGS            :=
 

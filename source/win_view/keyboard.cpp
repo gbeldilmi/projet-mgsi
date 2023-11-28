@@ -1,17 +1,14 @@
 #include <win_view.hpp>
 
+#include <iostream>
+
 void win_view::keyboard(unsigned char key, int x, int y)
 {
-  m_mouse = vec2{x, y};
   switch (key)
   {
-  /*
-  case :
-    break;
-  // */
   default:
+    std::cout << "key: " << key << "(" << x << "," << y << ")" << std::endl;
     break;
   }
-  //
-  
+  glutPostRedisplay();
 }
