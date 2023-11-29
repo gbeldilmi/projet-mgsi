@@ -4,11 +4,6 @@
 
 void win_view::display()
 {
-  glMatrixMode(GL_PROJECTION);
-  glLoadIdentity();
-  gluPerspective(50.0, 1, 0.1, 100.0);
-
-  glMatrixMode(GL_MODELVIEW);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
   glShadeModel(GL_SMOOTH);
   glLoadIdentity();

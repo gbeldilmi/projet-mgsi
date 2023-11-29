@@ -2,6 +2,8 @@
 #include <win_control.hpp>
 #include <win_view.hpp>
 
+#include <thread>
+
 data_model_t *g_data;
 
 int main(int argc, char **argv)
@@ -9,7 +11,10 @@ int main(int argc, char **argv)
   g_data = data_model::init(); 
   win_view::init(argc, argv);
   win_control::init();
-
-  win_view::run();
+  
+  std::thread tv(win_view::run);
+  std::thread tc(win_control::run);
+  tc.join();
+  win_view::exit();
   return 0;
 }

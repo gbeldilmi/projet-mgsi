@@ -1,6 +1,6 @@
 #pragma once
 
-#include <GL/glut.h>
+#include <GL/freeglut.h>
 
 #include <mgsi.hpp>
 
@@ -18,12 +18,13 @@ typedef struct mouse
 namespace win_view
 {
   extern mouse_t *m_mouse;
-  void init(int argc, char **argv);
   void display();
-  void keyboard(unsigned char key, int x, int y);
-  void motion(int x, int y);
-  void mouse(int button, int state, int x, int y);
-  void reshape(int width, int height);
+  void exit();
+  void init(int, char **);
+  void keyboard(unsigned char, int, int);
+  void motion(int, int);
+  void mouse(int, int, int, int);
+  void reshape(int, int);
   void run();
   void scene();
 };
