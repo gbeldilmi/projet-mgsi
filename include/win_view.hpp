@@ -25,4 +25,5 @@ namespace win_view
   void mouse(int button, int state, int x, int y);
   void reshape(int width, int height);
   void run();
+  void scene();
 };
