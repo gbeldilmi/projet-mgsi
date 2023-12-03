@@ -5,15 +5,20 @@
 class camera
 {
 private:
-  vec3_t m_pos, m_ang;
+  vec3_t m_pos, m_lat, m_ang;
+  float m_move_speed, m_rotation_speed;
 public:
-  camera(float, float, float, float, float, float);
-  camera(vec3_t, vec3_t);
+  camera(float, float, float, float, float, float, float, float);
+  camera(vec3_t, vec3_t, float, float);
   ~camera();
   vec3_t get_pos();
   float get_pos_x();
   float get_pos_y();
   float get_pos_z();
+  vec3_t get_lat();
+  float get_lat_x();
+  float get_lat_y();
+  float get_lat_z();
   vec3_t get_ang();
   float get_ang_x();
   float get_ang_y();
@@ -27,6 +32,11 @@ public:
   void set_pos_x(float);
   void set_pos_y(float);
   void set_pos_z(float);
+  void set_lat(vec3_t);
+  void set_lat(float, float, float);
+  void set_lat_x(float);
+  void set_lat_y(float);
+  void set_lat_z(float);
   void set_ang(vec3_t);
   void set_ang(float, float, float);
   void set_ang_x(float);
