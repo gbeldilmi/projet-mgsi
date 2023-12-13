@@ -17,10 +17,6 @@ void win_view::display()
   glPushMatrix();
   scene();
   glPopMatrix();
-
-  glFinish();
   glutSwapBuffers();
-  usleep(10000);
-  glutPostRedisplay();
 }
 
