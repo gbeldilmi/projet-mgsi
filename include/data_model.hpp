@@ -12,4 +12,5 @@ typedef struct
 namespace data_model
 {
   data_model_t *init();
+  void free(data_model_t *dm);
 } 

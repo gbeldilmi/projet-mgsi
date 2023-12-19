@@ -16,5 +16,7 @@ int main(int argc, char **argv)
   std::thread tc(win_control::run);
   tc.join();
   win_view::exit();
+
+  data_model::free(g_data);
   return 0;
 }

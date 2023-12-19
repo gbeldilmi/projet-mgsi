@@ -17,8 +17,7 @@ void win_view::init(int argc, char **argv)
   glutDisplayFunc(display);
   glutMouseFunc(mouse);
   glutMotionFunc(motion);
-  glutKeyboardFunc(keyboard);
   
   glMatrixMode(GL_MODELVIEW);
-  glutSetCursor(GLUT_CURSOR_CROSSHAIR);
+  glutPostRedisplay();
 }

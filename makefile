@@ -32,7 +32,7 @@ LD_FLAGS            :=
 #------------------------------------------------------------------------------#
 # Commands                                                                     #
 #------------------------------------------------------------------------------#
-.PHONY : all, clean, clear, run
+.PHONY : all, clean, clear, run, re, rr
 all : $(BUILD_DIR)/$(BIN_FILE)
 clean : all
 	rm -rv $(OBJECT_DIR)
@@ -40,6 +40,12 @@ clear : clean
 	rm -rv $(BUILD_DIR)
 run : all
 	./$(BUILD_DIR)/$(BIN_FILE)
+re :
+	make clear
+	make all
+rr :
+	make clear
+	make run
 
 #------------------------------------------------------------------------------#
 # Dependencies                                                                 #

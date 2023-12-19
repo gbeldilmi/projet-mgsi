@@ -8,7 +8,7 @@ void win_control::run()
   {
     print_head();
     std::cout << "\u001B[32m\t>> ";
-    std::cin >> input;
+    std::getline(std::cin, input);
     std::cout << "\u001B[0m";
     if (input == "exit" || input == "\0") {
       exit = 1;
