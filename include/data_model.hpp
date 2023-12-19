@@ -6,7 +6,7 @@
 typedef struct
 {
   camera *cam;
-  node *scene;
+  node *tree;
 } data_model_t;
 
 namespace data_model

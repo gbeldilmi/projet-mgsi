@@ -6,7 +6,6 @@ void win_control::run()
   int exit = 0;
   while (!exit)
   {
-    print_head();
     std::cout << "\u001B[32m\t>> ";
     std::getline(std::cin, input);
     std::cout << "\u001B[0m";

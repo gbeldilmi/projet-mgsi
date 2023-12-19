@@ -1,7 +1,5 @@
 #pragma once
 
-#include <GL/freeglut.h>
-
 #include <mgsi.hpp>
 
 typedef struct
@@ -21,10 +19,8 @@ namespace win_view
   void display();
   void exit();
   void init(int, char **);
-  void keyboard(unsigned char, int, int);
   void motion(int, int);
   void mouse(int, int, int, int);
   void reshape(int, int);
   void run();
-  void scene();
 };
