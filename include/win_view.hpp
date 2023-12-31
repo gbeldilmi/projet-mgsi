@@ -19,6 +19,7 @@ namespace win_view
   void display();
   void exit();
   void init(int, char **);
+  void load_texture(int, const char *);
   void motion(int, int);
   void mouse(int, int, int, int);
   void reshape(int, int);

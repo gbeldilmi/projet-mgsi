@@ -17,7 +17,17 @@ void win_view::init(int argc, char **argv)
   glutDisplayFunc(display);
   glutMouseFunc(mouse);
   glutMotionFunc(motion);
-  
+
+  load_texture(1, "resource/t0c.ppm");
+  load_texture(2, "resource/t1c.ppm");
+  load_texture(3, "resource/t2c.ppm");
+
+  load_texture(8, "resource/t0n.ppm");
+  load_texture(9, "resource/t1n.ppm");
+  load_texture(10, "resource/t2n.ppm");
+
+  load_texture(64, "resource/t0d.ppm");
+
   glMatrixMode(GL_MODELVIEW);
   glutPostRedisplay();
 }

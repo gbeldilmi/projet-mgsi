@@ -25,6 +25,16 @@ void node::draw()
   }
   else
   {
+    if (get_type() != NODE_EMPTY)
+    {
+      // set color, normal and displacement map
+      glActiveTexture(GL_TEXTURE0);
+      glBindTexture(GL_TEXTURE_2D, get_maps() & 0b000000111);
+      glActiveTexture(GL_TEXTURE1);
+      glBindTexture(GL_TEXTURE_2D, (get_maps() & 0b000111000) >> 3);
+      glActiveTexture(GL_TEXTURE2);
+      glBindTexture(GL_TEXTURE_2D, (get_maps() & 0b111000000) >> 6);
+    }
     switch (get_type())
     {
       case NODE_CUBE:

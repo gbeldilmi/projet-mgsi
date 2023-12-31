@@ -32,6 +32,7 @@ private:
   node *prev;
   float *matrix;
   int type;
+  int maps;
   node *child;
   void allocate_matrix();
   void allocate_matrix(float *);
@@ -52,11 +53,13 @@ public:
   void set_prev(node *);
   void set_child(node *);
   void set_type(int);
+  void set_maps(int);
   node *get_parent();
   node *get_next();
   node *get_prev();
   float *get_matrix();
   int get_type();
+  int get_maps();
   node *get_child();
   void *get_primitive();
   void group(int type);
