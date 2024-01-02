@@ -1,51 +1,27 @@
-#include win_control.hpp
+#include <win_control.hpp>
 
-void win_control::exec_cmd(std::string input)
+void win_control::exec_cmd(std::string directive, std::vector<std::string> arguments)
 {
-  string[] commande = new String[];
-
-  //On décompose les mots de l'input
-  vector<string> commande = getCmd(input, ' ');
-
-  switch(commande[0])
+  // redirect to the appropriate function
+  if (directive == "help")
   {
-    case "cd":
-    break;
-
-    case "ls":
-    break;
-
-    case "remove":
-    break;
-
-    case "add"
-    break;
-
-    case "scale"
-    break;
-
-    case "translate":
-    if((commande[1])
-    {
-      std::cout << "Syntaxe incorecte. Tapez help pour plus d'informations sur les commandes" << std::endl;
-    }
-    else
-    {
-
-    }
-    break;
-
-    case "rotate'":
-    break;
-    
-    case "help":
-    break;
-    
-    default:
-    std::cout << "Commande inconnue. Tapez help pour une liste des commandes" << std::endl;
+    dir_help(arguments);
   }
-
-
-  // TODO: Implement this function
-  std::cout << "exec_cmd(" << input << ")" << std::endl;
+  else if (directive == "list")
+  {
+    dir_list(arguments);
+  }
+  else if (directive == "node")
+  {
+    dir_node(arguments);
+  }
+  // ... add more directives here
+  else
+  {
+    if (directive != "help")
+    {
+      std::cout << "\u001B[31mUnknown directive.\u001B[0m" << std::endl;
+    }
+    dir_help(std::vector<std::string>());
+  }
 }

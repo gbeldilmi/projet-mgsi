@@ -1,8 +1,9 @@
-#include win_control.hpp
+#include <win_control.hpp>
 
 void win_control::run()
 {
-  std::string input;
+  std::string input, directive;
+  std::vector<std::string> arguments;
   int exit = 0;
   while (!exit)
   {
@@ -15,7 +16,9 @@ void win_control::run()
     } 
     else 
     {
-      exec_cmd(input);
+      // extract directive and arguments
+      extract_directive(input, directive, arguments);
+      exec_cmd(directive, arguments);
     }
   }
 }
