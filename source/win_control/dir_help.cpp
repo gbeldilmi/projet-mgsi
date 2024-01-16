@@ -55,7 +55,9 @@ void win_control::dir_help(std::vector<std::string> arguments)
     }
     else if (directive == "texture")
     {
-      std::cout << "texture: set a texture for a primitive" << std::endl;
+      std::cout << "texture: applique une texture à une primitive" << std::endl;
+      std::cout << "Usage: texture <type> <fichier>" << std::endl;
+      std::cout << "Valeurs possibles pour <type>: normal, displacement, color" << std::endl;
     }
     else if (directive == "ls")
     {
