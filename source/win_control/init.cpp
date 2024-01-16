@@ -1,8 +1,9 @@
 #include <win_control.hpp>
 
-node *win_control::m_node_ptr;
+node *win_control::m_current;
 
 void win_control::init()
 {
-  m_node_ptr = g_data->tree;
+  // save current node
+  m_current = g_data->tree;
 }
