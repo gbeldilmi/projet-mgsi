@@ -4,7 +4,7 @@ node::node()
 {
   // for debugging
   init(nullptr, nullptr, nullptr, nullptr, NODE_CUBE, nullptr);
-  set_maps((1 << 6) | (2 << 3) | (2 << 0));
+  set_maps(1, 2, 2);
   // init(nullptr, nullptr, nullptr, nullptr, NODE_EMPTY, nullptr);
 }
 
