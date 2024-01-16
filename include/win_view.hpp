@@ -29,6 +29,7 @@ namespace win_view
   void draw_sphere(int);
   void exit();
   void init(int, char **);
+  void load_texture(int, const char *);
   void motion(int, int);
   void mouse(int, int, int, int);
   void reshape(int, int);
