@@ -14,7 +14,7 @@ void win_view::display()
   glRotatef(g_data->cam->get_camera_theta() * 180 / M_PI, 1.0, 0.0, 0.0);
   glRotatef(g_data->cam->get_camera_phi() * 180 / M_PI, 0.0, 0.0, 1.0);
 
-  draw_node(g_data->tree);
+  g_data->tree->draw();
   glutSwapBuffers();
 }
 

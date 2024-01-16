@@ -1,6 +1,6 @@
 #include <win_control.hpp>
 
-void(win_control::dir_scale(std::vector<std::string> arguments))
+void win_control::dir_scale(std::vector<std::string> arguments)
 {
   if ((arguments.size() < 3) || (arguments.size() > 3)) //si le nombre d'arguments est incorrect
   {

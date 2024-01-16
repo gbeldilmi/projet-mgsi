@@ -1,13 +1,14 @@
 #pragma once
 
 #include <stdlib.h>
+#include <GL/freeglut.h>
 
 // node types
 #define NODE_EMPTY -1
 #define NODE_GROUP 0 // the only node type that can have children
 #define NODE_CUBE 1
-#define NODE_SPHERE 2
-#define NODE_CYLINDER 3
+#define NODE_CYLINDER 2
+#define NODE_SPHERE 3
 
 class node
 {
