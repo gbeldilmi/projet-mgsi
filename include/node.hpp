@@ -1,28 +1,12 @@
 #pragma once
 
 #include <stdlib.h>
-#include <GL/freeglut.h>
 
 #define NODE_EMPTY -1
 #define NODE_GROUP 0
 #define NODE_CUBE 1
-#define NODE_WIRE_CUBE 2
-#define NODE_SPHERE 3
-#define NODE_WIRE_SPHERE 4
-#define NODE_CONE 5
-#define NODE_WIRE_CONE 6
-#define NODE_TORUS 7
-#define NODE_WIRE_TORUS 8
-#define NODE_TEAPOT 9
-#define NODE_WIRE_TEAPOT 10
-#define NODE_ICOSAHEDRON 11
-#define NODE_WIRE_ICOSAHEDRON 12
-#define NODE_OCTAHEDRON 13
-#define NODE_WIRE_OCTAHEDRON 14
-#define NODE_TETRAHEDRON 15
-#define NODE_WIRE_TETRAHEDRON 16
-#define NODE_DODECAHEDRON 17
-#define NODE_WIRE_DODECAHEDRON 18
+#define NODE_SPHERE 2
+#define NODE_CYLINDER 3
 
 class node
 {
