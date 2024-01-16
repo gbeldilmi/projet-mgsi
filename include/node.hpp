@@ -3,8 +3,9 @@
 #include <stdlib.h>
 #include <GL/freeglut.h>
 
+// node types
 #define NODE_EMPTY -1
-#define NODE_GROUP 0
+#define NODE_GROUP 0 // the only node type that can have children
 #define NODE_CUBE 1
 #define NODE_WIRE_CUBE 2
 #define NODE_SPHERE 3
@@ -27,16 +28,20 @@
 class node
 {
 private:
-  node *parent;
-  node *next;
-  node *prev;
-  float *matrix;
-  int type;
-  node *child;
+  node *parent; // parent node
+  node *next; // right sibling
+  node *prev; // left sibling
+  float *matrix; // transformation matrix on this node
+  int type; // node type
+  int maps; // maps id used for textures
+  node *child; // leftmost child
+  // allocate memory for matrix
   void allocate_matrix();
-  void allocate_matrix(float *);
+  void allocate_matrix(float *); // using values from parameter
+  // initialize node with values for each member variable
   void init(node *parent, node *next, node *prev, float *matrix, int type, node *child);
 public:
+  // constructors and destructor
   node();
   node(node *clone);
   node(node *parent, node *next, node *prev);
@@ -45,6 +50,7 @@ public:
   node(node *parent, node *next, node *prev, float *matrix, node *child);
   node(node *parent, node *next, node *prev, float *matrix, int type);
   ~node();
+  // setters and getters
   void set_matrix_identity();
   void set_matrix(float *);
   void set_parent(node *);
@@ -59,8 +65,10 @@ public:
   int get_type();
   node *get_child();
   void *get_primitive();
-  void group(int type);
-  void group(node *);
+  // add a node to the tree
+  void group(int type); // new node by its type
+  void group(node *); // existing node
+  // remove this node from the tree
   void remove();
   void draw();
 };
