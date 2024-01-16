@@ -38,6 +38,7 @@ public:
   void set_child(node *);
   void set_type(int);
   void set_maps(int);
+  void set_maps(int, int, int);
   node *get_parent();
   node *get_next();
   node *get_prev();
