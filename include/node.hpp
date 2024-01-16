@@ -7,23 +7,8 @@
 #define NODE_EMPTY -1
 #define NODE_GROUP 0 // the only node type that can have children
 #define NODE_CUBE 1
-#define NODE_WIRE_CUBE 2
+#define NODE_CYLINDER 2
 #define NODE_SPHERE 3
-#define NODE_WIRE_SPHERE 4
-#define NODE_CONE 5
-#define NODE_WIRE_CONE 6
-#define NODE_TORUS 7
-#define NODE_WIRE_TORUS 8
-#define NODE_TEAPOT 9
-#define NODE_WIRE_TEAPOT 10
-#define NODE_ICOSAHEDRON 11
-#define NODE_WIRE_ICOSAHEDRON 12
-#define NODE_OCTAHEDRON 13
-#define NODE_WIRE_OCTAHEDRON 14
-#define NODE_TETRAHEDRON 15
-#define NODE_WIRE_TETRAHEDRON 16
-#define NODE_DODECAHEDRON 17
-#define NODE_WIRE_DODECAHEDRON 18
 
 class node
 {
@@ -58,11 +43,14 @@ public:
   void set_prev(node *);
   void set_child(node *);
   void set_type(int);
+  void set_maps(int);
+  void set_maps(int, int, int);
   node *get_parent();
   node *get_next();
   node *get_prev();
   float *get_matrix();
   int get_type();
+  int get_maps();
   node *get_child();
   void *get_primitive();
   // add a node to the tree
@@ -70,5 +58,4 @@ public:
   void group(node *); // existing node
   // remove this node from the tree
   void remove();
-  void draw();
 };

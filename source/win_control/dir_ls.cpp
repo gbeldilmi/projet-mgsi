@@ -12,9 +12,9 @@ void win_control::dir_ls(std::vector<std::string> arguments)
 
     std::cout << "Noeuds voisins :" << std::endl;
     std::cout << "\t" << "Précédent" << std::endl;
-    if(m_current->get_previous() != nullptr) //si le noeud précédent existe
+    if(m_current->get_prev() != nullptr) //si le noeud précédent existe
     {
-      switch (m_current->get_previous()->get_type()) //affiche le type du noeud précédent
+      switch (m_current->get_prev()->get_type()) //affiche le type du noeud précédent
       {
       case NODE_GROUP:
         std::cout << "\t" << "Groupe" << std::endl;
@@ -70,11 +70,8 @@ void win_control::dir_ls(std::vector<std::string> arguments)
     }
     
     std::cout << "Noeuds enfants :" << std::endl;
-    if(m_current->get_child() != nullptr) //si le noeud enfant existe
-    {
-      node *child = m_current->get_child();
-    }
-    else
+    node *child = m_current->get_child();
+    if(child == nullptr) //si le noeud enfant n'existe pas
     {
       std::cout << "\t" << "Aucun" << std::endl;
     }
