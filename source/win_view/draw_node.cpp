@@ -6,7 +6,7 @@ void win_view::draw_node(node *node)
   glMultMatrixf(node->get_matrix());
   if (node->get_type() == NODE_GROUP)
   {
-    node->get_child()->draw();
+    draw_node(node->get_child());
   }
   else
   {

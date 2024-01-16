@@ -49,5 +49,4 @@ public:
   void group(int type);
   void group(node *);
   void remove();
-  void draw();
 };

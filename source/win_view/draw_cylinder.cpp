@@ -7,7 +7,6 @@ void win_view::draw_cylinder(int maps)
       d = extract_displacement_map(maps),
       i, j, slices = 20;
   float x, y, z;
-  int 
   glBegin(GL_TRIANGLES);
   for (i = 0; i <= slices; ++i)
   {
