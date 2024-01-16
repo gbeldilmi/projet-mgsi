@@ -8,5 +8,4 @@ void node::init(node *parent, node *next, node *prev, float *matrix, int type, n
   allocate_matrix(matrix);
   set_child(child);
   set_type(type);
-  set_maps(1, 1, 1);
 }

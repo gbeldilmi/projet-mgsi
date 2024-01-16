@@ -5,6 +5,7 @@
 #include <vector>
 
 #include <mgsi.hpp>
+#include <node.hpp>
 
 namespace win_control
 {
