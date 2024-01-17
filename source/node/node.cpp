@@ -2,7 +2,10 @@
 
 node::node()
 {
-  init(nullptr, nullptr, nullptr, nullptr, NODE_EMPTY, nullptr);
+  // for debugging
+  init(nullptr, nullptr, nullptr, nullptr, NODE_CUBE, nullptr);
+  set_maps(1, 2, 2);
+  // init(nullptr, nullptr, nullptr, nullptr, NODE_EMPTY, nullptr);
 }
 
 node::node(node *clone)

@@ -7,45 +7,20 @@ void win_control::exec_cmd(std::string directive, std::vector<std::string> argum
   {
     dir_help(arguments);
   }
-  
-  else if (directive == "add") //ajoute une primitive
+  else if (directive == "list")
   {
-    dir_add(arguments);
+    dir_list(arguments);
   }
-  else if (directive == "remove") //supprime une primitive
+  else if (directive == "node")
   {
-    dir_remove(arguments);
+    dir_node(arguments);
   }
-  else if (directive == "rotate")  //tourne une primitive
-  {
-    dir_rotate(aruguments);
-  }
-  else if (directive == "translate") //déplace une primitive
-  {
-    dir_translate(arguments);
-  }
-  else if (directive == "scale") //redimensionne une primitive
-  {
-    dir_scale(arguments);
-  }
-  else if (directive == "texture") //applique une texture à une primitive
-  {
-    dir_texture(arguments);
-  }
-  else if (directive == "ls") //liste les primitives
-  {
-    dir_ls(arguments);
-  }
-  else if (directive == "cd") //change de noeud
-  {
-    dir_cd(arguments);
-  }
+  // ... add more directives here
   else
   {
     if (directive != "help")
     {
-      std::cout << "Erreur : directive inconnue" << std::endl; //affiche une erreur
-      std::cout << "Tapez \u001B[34mhelp\u001B[0m pour afficher l'aide" << std::endl; //affiche l'aide
+      std::cout << "\u001B[31mUnknown directive.\u001B[0m" << std::endl;
     }
     dir_help(std::vector<std::string>());
   }
