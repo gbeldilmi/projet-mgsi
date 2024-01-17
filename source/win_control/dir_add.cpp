@@ -30,6 +30,7 @@ void win_control::dir_add(std::vector<std::string> arguments)
       {
         m_current->group(NODE_SPHERE); // crée un nouveau noeud et l'ajoute au noeud courant
       }
+      std::cout << "Sphere ajoutée" << std::endl; // affiche un message de confirmation
     }
     else if (arguments[0] == "cylindre")
     {
@@ -41,6 +42,7 @@ void win_control::dir_add(std::vector<std::string> arguments)
       {
         m_current->group(NODE_CYLINDER); // crée un nouveau noeud et l'ajoute au noeud courant
       }
+      std::cout << "Cylindre ajouté" << std::endl; // affiche un message de confirmation
     }
     else
     {

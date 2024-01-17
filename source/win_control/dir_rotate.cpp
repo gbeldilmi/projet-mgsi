@@ -6,7 +6,7 @@ void win_control::dir_rotate(std::vector<std::string> arguments)
     {
         dir_help(std::vector<std::string>({"rotate"})); //affiche l'aide
     }
-    else if(!typeId(arguments[0].toFloat()) || (!typeId(arguments[1].toFloat())) || (!typeId(arguments[2].toFloat()))) //si les arguments ne sont pas des nombres
+    else if((strtof(arguments[0]) == NULL) || (strtof(arguments[1]) == NULL) || (strtof(arguments[2]) == NULL)) //si les arguments ne sont pas des entiers
     {
         std::cout << "Erreur : les arguments doivent être des entiers" << std::endl; //affiche une erreur
         dir_help(std::vector<std::string>({"rotate"})); //affiche l'aide
@@ -17,30 +17,24 @@ void win_control::dir_rotate(std::vector<std::string> arguments)
         float angleY = arguments[1].toFloat();
         float angleZ = arguments[2].toFloat();
 
-        float cX = cos(angleX);
-        float sX = sin(angleX);
-        float cY = cos(angleY);
-        float sY = sin(angleY);
-        float cZ = cos(angleZ);
-        float sZ = sin(angleZ);
+        float rotationMatrix[16] = {
+            cos(angleY) * cos(angleZ), -cos(angleX) * sin(angleZ) + sin(angleX) * sin(angleY) * cos(angleZ), sin(angleX) * sin(angleZ) + cos(angleX) * sin(angleY) * cos(angleZ), 0.0f,
+            cos(angleY) * sin(angleZ), cos(angleX) * cos(angleZ) + sin(angleX) * sin(angleY) * sin(angleZ), -sin(angleX) * cos(angleZ) + cos(angleX) * sin(angleY) * sin(angleZ), 0.0f,
+            -sin(angleY), sin(angleX) * cos(angleY), cos(angleX) * cos(angleY), 0.0f,
+            0.0f, 0.0f, 0.0f, 1.0f
+        };
 
-        Matrix4x4 rotationMatrix;
-        rotationMatrix[0][0] = cY * cZ;
-        rotationMatrix[0][1] = -cY * sZ;
-        rotationMatrix[0][2] = sY;
-        rotationMatrix[0][3] = 0.0f;
-        rotationMatrix[1][0] = sX * sY * cZ + cX * sZ;
-        rotationMatrix[1][1] = -sX * sY * sZ + cX * cZ;
-        rotationMatrix[1][2] = -sX * cY;
-        rotationMatrix[1][3] = 0.0f;
-        rotationMatrix[2][0] = -cX * sY * cZ + sX * sZ;
-        rotationMatrix[2][1] = cX * sY * sZ + sX * cZ;
-        rotationMatrix[2][2] = cX * cY;
-        rotationMatrix[2][3] = 0.0f;
-        rotationMatrix[3][0] = 0.0f;
-        rotationMatrix[3][1] = 0.0f;
-        rotationMatrix[3][2] = 0.0f;
-        rotationMatrix[3][3] = 1.0f;
-
-        m_current->set_matrix(m_current->get_matrix() * rotationMatrix); //applique la rotation
+        current_matrix = m_current->get_matrix();
+        
+        float resultMatrix[16];
+        for (int i = 0; i < 4; i++) {
+          for (int j = 0; j < 4; j++) {
+            resultMatrix[i * 4 + j] = 0.0f;
+            for (int k = 0; k < 4; k++) {
+              resultMatrix[i * 4 + j] += current_matrix[i * 4 + k] * rotationMatrix[k * 4 + j];
+            }
+          }
+        }
+        m_current->set_matrix(resultMatrix);
+    }
 }

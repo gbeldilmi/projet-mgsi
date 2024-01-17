@@ -8,9 +8,9 @@ void win_control::dir_texture(std::vector<std::string> arguments)
   }
   else
   {
-    if ((!arguments[1].isInt())) //si le deuxième argument n'est pas un entier
+    if ((stoi(arguments[1]) == NULL) || (stoi(arguments[1]) <=s 0)) //si le deuxième argument n'est pas un entier supérieur à 0
     {
-      std::cout << "Erreur : le deuxième argument doit être un entier" << std::endl; //affiche une erreur
+      std::cout << "Erreur : le deuxième argument doit être un entier supérieur à 0" << std::endl; //affiche une erreur
       std::cout << "Tapez \u001B[34mhelp texture\u001B[0m pour afficher l'aide" << std::endl; //affiche l'aide
     }
     else if(arguments[0] == "normal") //applique une texture normal map
