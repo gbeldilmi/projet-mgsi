@@ -6,7 +6,7 @@ void win_control::dir_translate(std::vector<std::string> arguments)
   {
     dir_help(std::vector<std::string>({"translate"})); //affiche l'aide
   }
-  else if((strtof(arguments[0]) == NULL) || (strtof(arguments[1]) == NULL) || (strtof(arguments[2]) == NULL)) //si les arguments ne sont pas des entiers
+  else if((stof(arguments[0]) == NULL) || (stof(arguments[1]) == NULL) || (stof(arguments[2]) == NULL)) //si les arguments ne sont pas des entiers
   {  
     std::cout << "Erreur : les arguments doivent être des entiers" << std::endl; //affiche une erreur
     dir_help(std::vector<std::string>({"translate"})); //affiche l'aide
@@ -25,7 +25,7 @@ void win_control::dir_translate(std::vector<std::string> arguments)
     translateMatrix[3] = 0.0f; translateMatrix[7] = 0.0f; translateMatrix[11] = 0.0f; translateMatrix[15] = 1.0f;
     
     // Appliquer la translation
-    float currentMatrix[] = m_current->get_matrix();
+    float* currentMatrix = m_current->get_matrix();
     glGetFloatv(GL_MODELVIEW_MATRIX, currentMatrix);
     
     float resultMatrix[16];

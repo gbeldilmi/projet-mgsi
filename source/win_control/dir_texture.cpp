@@ -2,13 +2,13 @@
 
 void win_control::dir_texture(std::vector<std::string> arguments)
 {
-  if ((arguments.size() < 3) || (arguments.size() > 3)) //si le nombre d'arguments est incorrect
+  /*if ((arguments.size() < 3) || (arguments.size() > 3)) //si le nombre d'arguments est incorrect
   {
     dir_help(std::vector<std::string>({"texture"})); //affiche l'aide
   }
   else
   {
-    if ((stoi(arguments[1]) == NULL) || (stoi(arguments[1]) <=s 0)) //si le deuxième argument n'est pas un entier supérieur à 0
+    if ((stoi(arguments[1]) == NULL) || (stoi(arguments[1]) <= 0)) //si le deuxième argument n'est pas un entier supérieur à 0
     {
       std::cout << "Erreur : le deuxième argument doit être un entier supérieur à 0" << std::endl; //affiche une erreur
       std::cout << "Tapez \u001B[34mhelp texture\u001B[0m pour afficher l'aide" << std::endl; //affiche l'aide
@@ -30,5 +30,5 @@ void win_control::dir_texture(std::vector<std::string> arguments)
       std::cout << "Erreur : type de texture inconnu" << std::endl; //affiche une erreur
       std::cout << "Tapez \u001B[34mhelp texture\u001B[0m pour afficher l'aide" << std::endl; //affiche l'aide
     }
-  }
+  }*/
 }

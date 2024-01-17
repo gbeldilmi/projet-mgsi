@@ -18,7 +18,7 @@ void win_control::exec_cmd(std::string directive, std::vector<std::string> argum
   }
   else if (directive == "rotate")  //tourne une primitive
   {
-    dir_rotate(aruguments);
+    dir_rotate(arguments);
   }
   else if (directive == "translate") //déplace une primitive
   {

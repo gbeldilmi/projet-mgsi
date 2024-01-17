@@ -6,16 +6,16 @@ void win_control::dir_rotate(std::vector<std::string> arguments)
     {
         dir_help(std::vector<std::string>({"rotate"})); //affiche l'aide
     }
-    else if((strtof(arguments[0]) == NULL) || (strtof(arguments[1]) == NULL) || (strtof(arguments[2]) == NULL)) //si les arguments ne sont pas des entiers
+    else if((stof(arguments[0]) == NULL) || (stof(arguments[1]) == NULL) || (stof(arguments[2]) == NULL)) //si les arguments ne sont pas des entiers
     {
         std::cout << "Erreur : les arguments doivent être des entiers" << std::endl; //affiche une erreur
         dir_help(std::vector<std::string>({"rotate"})); //affiche l'aide
     }
     else
     {
-        float angleX = arguments[0].toFloat();
-        float angleY = arguments[1].toFloat();
-        float angleZ = arguments[2].toFloat();
+        float angleX = std::stof(arguments[0]);
+        float angleY = std::stof(arguments[1]);
+        float angleZ = std::stof(arguments[2]);
 
         float rotationMatrix[16] = {
             cos(angleY) * cos(angleZ), -cos(angleX) * sin(angleZ) + sin(angleX) * sin(angleY) * cos(angleZ), sin(angleX) * sin(angleZ) + cos(angleX) * sin(angleY) * cos(angleZ), 0.0f,
@@ -24,6 +24,7 @@ void win_control::dir_rotate(std::vector<std::string> arguments)
             0.0f, 0.0f, 0.0f, 1.0f
         };
 
+        float* current_matrix;
         current_matrix = m_current->get_matrix();
         
         float resultMatrix[16];
